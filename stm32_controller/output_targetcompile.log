@@ -1,0 +1,26 @@
+Compiling generated/fonts/src/Font_verdana_10_4bpp.cpp
+Compiling generated/fonts/src/Table_verdana_10_4bpp.cpp
+Compiling generated/fonts/src/Table_verdana_40_4bpp.cpp
+Compiling generated/fonts/src/ApplicationFontProvider.cpp
+Compiling generated/fonts/src/Table_verdana_20_4bpp.cpp
+Compiling generated/images/src/mexican_flag_invert_40x23.cpp
+Compiling generated/images/src/mexican_flag_40x23.cpp
+Compiling generated/images/src/BitmapDatabase.cpp
+Compiling generated/images/src/bulb_on.cpp
+Compiling generated/images/src/board.cpp
+Compiling generated/images/src/blue_slider_horizontal_small_slider_square_fill.cpp
+Compiling generated/images/src/blue_slider_horizontal_indicators_slider_square_knob.cpp
+      0 [main] us 0 init_cheap: VirtualAlloc pointer is null, Win32 error 487
+AllocationBase 0x0, BaseAddress 0x60EA0000, RegionSize 0x300000, State 0x10000
+Compiling generated/images/src/blue_slider_horizontal_small_slider_square_back.cpp
+C:\TouchGFX\4.9.3\env\MinGW\msys\1.0\bin\mkdir.exe: *** Couldn't reserve space for cygwin's heap, Win32 error 0
+Compiling generated/images/src/power.cpp
+Compiling generated/images/src/background.cpp
+Compiling generated/images/src/usa_flag_invert_40x23.cpp
+target/gcc/Makefile:321: recipe for target 'build/ST/STM32F746G-DISCO/generated/images/src/bulb_on.o' failed
+make[2]: *** [build/ST/STM32F746G-DISCO/generated/images/src/bulb_on.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+target/gcc/Makefile:288: recipe for target 'generate_assets' failed
+make[1]: *** [generate_assets] Error 2
+target/gcc/Makefile:44: recipe for target 'all' failed
+make: *** [all] Error 2

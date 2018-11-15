@@ -1,0 +1,88 @@
+__var RCC_CFGR;
+__var RCC_CR;
+__var RCC_CIR;
+__var IWDG_PR;
+__var IWDG_RLR;
+
+execUserFlashInit()
+{
+  //Stop watchdogs when CPU is halted
+  __writeMemory32(__readMemory32(0xE0042008, "Memory") | 0x1800, 0xE0042008, "Memory");
+ 
+  RCC_CFGR = __readMemory32(0x40023808, "Memory");
+  RCC_CR   = __readMemory32(0x40023800, "Memory");
+  RCC_CIR  = __readMemory32(0x4002380C, "Memory");
+  
+  __writeMemory32(0x00000000, 0x40023808, "Memory"); // RCC_CFGR = 0;
+  __writeMemory32(0x00007E83, 0x40023800, "Memory"); // RCC_CR   = 0x83
+  __writeMemory32(0x00000000, 0x4002380C, "Memory"); // RCC_CIR  = 0;
+
+  //Check if hardware watchdog is enabled
+  if(!(0x20 & __readMemory32(0x40023C14,"Memory")))
+  {
+    // wait PVU reset
+    while(0x1 & __readMemory32(0x4000300C,"Memory"));
+    IWDG_PR  = __readMemory32(0x40003004, "Memory");
+    // wait RVU reset
+    while(0x2 & __readMemory32(0x4000300C,"Memory"));
+    IWDG_RLR = __readMemory32(0x40003008, "Memory");
+  
+    // unlock WDT registers
+    __writeMemory32(0x5555,0x40003000,"Memory");
+    // Prescaler
+    __writeMemory32(0x7,0x40003004,"Memory");
+    // Reload
+    __writeMemory32(0xFFF,0x40003008,"Memory");
+    // reload WDT
+    __writeMemory32(0xAAAA,0x40003000,"Memory");
+  }
+  
+  if ((0x0000FF00 & __readMemory32(0x40023C14,"Memory")) != 0xAA00)
+  {
+    
+    if (!__messageBoxYesCancel("Do you want to perform mass erase to unlock the device?", "Unlocking device"))
+    {
+      __abortLaunch("Unlock cancelled. Debug session cannot continue.");
+    }
+
+    __writeMemory32(0x45670123, 0x40023C04, "Memory"); // FLASH->FKEYR = FLASH_KEY1;
+    __writeMemory32(0xCDEF89AB, 0x40023C04, "Memory"); // FLASH->FKEYR = FLASH_KEY2;
+    __writeMemory32(0x00000000, 0x40023C00, "Memory"); // Flash 0 wait state
+    __writeMemory32(0x08192A3B, 0x40023C08, "Memory"); // FLASH->OPTKEYR = FLASH_OPTKEY1;
+    __writeMemory32(0x4C5D6E7F, 0x40023C08, "Memory"); // FLASH->OPTKEYR = FLASH_OPTKEY2; 
+      
+    __message "Setting FLASH readout protection level 0 (disabled)";
+  
+    __var temp_opt;
+    
+    temp_opt = 0xFFFF00FF & __readMemory32(0x40023C14,"Memory");
+    temp_opt |= 0xAA00;
+ 
+    __writeMemory32(temp_opt , 0x40023C14, "Memory"); // Set RDP register bits to 0xAA
+    __writeMemory32(0x2 | temp_opt , 0x40023C14, "Memory"); // Set OPTSTRT
+    
+    while(0x10000 & __readMemory32(0x40023C0C,"Memory"))
+    {
+      __delay(100);
+    }  // Wait while FLASH busy
+    
+    __hwReset(0); // Reset to make changes take effect
+
+  }
+}
+
+execUserFlashExit()
+{
+  if(!(0x20 & __readMemory32(0x40023C14,"Memory")))
+  {
+    __writeMemory32(0x5555,0x40003000,"Memory");
+    __writeMemory32(IWDG_PR,0x40003004,"Memory");
+    __writeMemory32(IWDG_RLR,0x40003008,"Memory");
+    __writeMemory32(0xAAAA,0x40003000,"Memory");
+  }
+
+  //Restore registers modified earlier
+  __writeMemory32(RCC_CFGR, 0x40023808, "Memory");
+  __writeMemory32(RCC_CR, 0x40023800, "Memory");
+  __writeMemory32(RCC_CIR, 0x4002380C, "Memory");
+}
