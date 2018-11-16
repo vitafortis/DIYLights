@@ -7,14 +7,12 @@
 
 typedef enum {
     ENG,
-    SPA,
     NUMBER_OF_LANGUAGES
 } LANGUAGES;
 
 
 typedef enum {
     T_SINGLEUSEID1,
-    T_SINGLEUSEID2,
     NUMBER_OF_TEXT_KEYS
 } TEXTS;
 

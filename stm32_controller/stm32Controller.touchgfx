@@ -5,9 +5,9 @@
         "Components": [
           {
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
             },
             "Alpha": 255,
             "Name": "box1",
@@ -16,21 +16,6 @@
             "Width": 480,
             "Height": 272,
             "Type": "Box",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "RelativeFilename": "background.png",
-            "Alpha": 255,
-            "Name": "bg_image",
-            "X": 0,
-            "Y": 0,
-            "Width": 480,
-            "Height": 272,
-            "Type": "Image",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -49,14 +34,13 @@
             "AutoSize": false,
             "LineSpacing": 0,
             "Wildcard1": {
-              "TextId": "SingleUseId2",
               "UseBuffer": true,
               "BufferSize": 10
             },
             "Name": "powerLabel",
-            "X": 192,
-            "Y": 196,
-            "Width": 100,
+            "X": 315,
+            "Y": 245,
+            "Width": 150,
             "Height": 25,
             "Type": "TextArea",
             "Visible": true,
@@ -69,31 +53,31 @@
             "Filename": "color_wheel.png",
             "Alpha": 255,
             "ScalingAlgorithm": "Nearest-neighbor",
-            "Name": "scalableImage1",
-            "X": 167,
-            "Y": 46,
-            "Width": 150,
-            "Height": 150,
+            "Name": "color_box",
+            "X": 0,
+            "Y": 1,
+            "Width": 270,
+            "Height": 270,
             "Type": "ScalableImage",
             "Visible": true,
             "Draggable": false,
-            "Clickable": false,
+            "Clickable": true,
             "Fadeable": false,
             "Moveable": false
           },
           {
-            "Pressed": "color_button.png",
-            "Released": "color_button.png",
-            "Alpha": 88,
-            "Name": "color_button",
-            "X": 167,
-            "Y": 46,
-            "Width": 150,
-            "Height": 150,
-            "Type": "Button",
+            "Filename": "circle-outline.png",
+            "Alpha": 255,
+            "ScalingAlgorithm": "Nearest-neighbor",
+            "Name": "selector",
+            "X": 130,
+            "Y": 131,
+            "Width": 10,
+            "Height": 10,
+            "Type": "ScalableImage",
             "Visible": true,
             "Draggable": false,
-            "Clickable": true,
+            "Clickable": false,
             "Fadeable": false,
             "Moveable": false
           }
@@ -106,10 +90,6 @@
     "TextEntries": [
       {
         "TextEntryId": "SingleUseId1",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId2",
         "IsResource": false
       }
     ],

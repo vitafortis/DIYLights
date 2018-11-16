@@ -14,11 +14,11 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    void ColorClickHandler(const AbstractButton& b, const ClickEvent& e);
+    void colorHandler(const ScalableImage& b, const ClickEvent& e);
 
 protected:
- 
-  Callback<Screen1View, const AbstractButton&, const ClickEvent&> ButtonClickedCallback;
+  const int RADIUS = 135;
+  Callback<Screen1View, const ScalableImage&, const ClickEvent&> colorCallback;
   
 
 };

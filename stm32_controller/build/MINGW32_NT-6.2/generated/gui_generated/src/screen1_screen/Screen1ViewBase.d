@@ -45,18 +45,16 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/screen1_screen/Screen1ViewBase.
  touchgfx//framework/include/touchgfx/Texts.hpp \
  touchgfx//framework/include/touchgfx/widgets/Box.hpp \
  touchgfx//framework/include/touchgfx/widgets/Widget.hpp \
- touchgfx//framework/include/touchgfx/widgets/Image.hpp \
  touchgfx//framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  touchgfx//framework/include/touchgfx/widgets/TextArea.hpp \
  touchgfx//framework/include/touchgfx/FontManager.hpp \
  touchgfx//framework/include/touchgfx/TypedText.hpp \
  touchgfx//framework/include/touchgfx/widgets/ScalableImage.hpp \
- touchgfx//framework/include/touchgfx/widgets/Button.hpp \
- touchgfx//framework/include/touchgfx/widgets/AbstractButton.hpp \
+ touchgfx//framework/include/touchgfx/widgets/Image.hpp \
  touchgfx//framework/include/touchgfx/mixins/ClickListener.hpp \
  touchgfx//framework/include/touchgfx/Color.hpp \
- generated/images/include/BitmapDatabase.hpp \
- generated/texts/include/texts/TextKeysAndLanguages.hpp
+ generated/texts/include/texts/TextKeysAndLanguages.hpp \
+ generated/images/include/BitmapDatabase.hpp
 
 generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:
 
@@ -148,8 +146,6 @@ touchgfx//framework/include/touchgfx/widgets/Box.hpp:
 
 touchgfx//framework/include/touchgfx/widgets/Widget.hpp:
 
-touchgfx//framework/include/touchgfx/widgets/Image.hpp:
-
 touchgfx//framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 
 touchgfx//framework/include/touchgfx/widgets/TextArea.hpp:
@@ -160,14 +156,12 @@ touchgfx//framework/include/touchgfx/TypedText.hpp:
 
 touchgfx//framework/include/touchgfx/widgets/ScalableImage.hpp:
 
-touchgfx//framework/include/touchgfx/widgets/Button.hpp:
-
-touchgfx//framework/include/touchgfx/widgets/AbstractButton.hpp:
+touchgfx//framework/include/touchgfx/widgets/Image.hpp:
 
 touchgfx//framework/include/touchgfx/mixins/ClickListener.hpp:
 
 touchgfx//framework/include/touchgfx/Color.hpp:
 
-generated/images/include/BitmapDatabase.hpp:
-
 generated/texts/include/texts/TextKeysAndLanguages.hpp:
+
+generated/images/include/BitmapDatabase.hpp:

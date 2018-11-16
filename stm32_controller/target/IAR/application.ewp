@@ -1036,61 +1036,19 @@
       <group>
         <name>images</name>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\background.cpp</name>
-        </file>
-        <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\BitmapDatabase.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\blue_slider_horizontal_indicators_slider_square_knob.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\blue_slider_horizontal_small_slider_square_back.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\blue_slider_horizontal_small_slider_square_fill.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\board.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\bulb_off.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\bulb_on.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\color_button.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\images\src\circle-outline.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\Color_wheel.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\mexican_flag_40x23.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\mexican_flag_invert_40x23.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\power.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\power_pressed.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\usa_flag_40x23.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\usa_flag_invert_40x23.cpp</name>
         </file>
       </group>
       <group>
         <name>texts</name>
         <file>
           <name>$PROJ_DIR$\..\..\generated\texts\src\LanguageEng.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\texts\src\LanguageSpa.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\texts\src\Texts.cpp</name>

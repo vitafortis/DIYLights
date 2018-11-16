@@ -29,20 +29,12 @@ public:
     virtual void deactivate();
 
     virtual ~Screen1Presenter() {};
-    
-    virtual void toggleLight();
-    
-    virtual void updateAlpha();
-    
-    void setLanguage(LanguageId lang);
-
 
 private:
     Screen1Presenter();
 
     Screen1View& view;
     
-    bool lightState;
 };
 
 

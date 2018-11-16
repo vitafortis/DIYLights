@@ -46,14 +46,12 @@ build/MINGW32_NT-6.2/gui/src/screen1_screen/Screen1Presenter.o: \
  touchgfx//framework/include/touchgfx/Texts.hpp \
  touchgfx//framework/include/touchgfx/widgets/Box.hpp \
  touchgfx//framework/include/touchgfx/widgets/Widget.hpp \
- touchgfx//framework/include/touchgfx/widgets/Image.hpp \
  touchgfx//framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  touchgfx//framework/include/touchgfx/widgets/TextArea.hpp \
  touchgfx//framework/include/touchgfx/FontManager.hpp \
  touchgfx//framework/include/touchgfx/TypedText.hpp \
  touchgfx//framework/include/touchgfx/widgets/ScalableImage.hpp \
- touchgfx//framework/include/touchgfx/widgets/Button.hpp \
- touchgfx//framework/include/touchgfx/widgets/AbstractButton.hpp \
+ touchgfx//framework/include/touchgfx/widgets/Image.hpp \
  touchgfx//framework/include/touchgfx/mixins/ClickListener.hpp \
  generated/texts/include/texts\TextKeysAndLanguages.hpp
 
@@ -149,8 +147,6 @@ touchgfx//framework/include/touchgfx/widgets/Box.hpp:
 
 touchgfx//framework/include/touchgfx/widgets/Widget.hpp:
 
-touchgfx//framework/include/touchgfx/widgets/Image.hpp:
-
 touchgfx//framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 
 touchgfx//framework/include/touchgfx/widgets/TextArea.hpp:
@@ -161,9 +157,7 @@ touchgfx//framework/include/touchgfx/TypedText.hpp:
 
 touchgfx//framework/include/touchgfx/widgets/ScalableImage.hpp:
 
-touchgfx//framework/include/touchgfx/widgets/Button.hpp:
-
-touchgfx//framework/include/touchgfx/widgets/AbstractButton.hpp:
+touchgfx//framework/include/touchgfx/widgets/Image.hpp:
 
 touchgfx//framework/include/touchgfx/mixins/ClickListener.hpp:
 

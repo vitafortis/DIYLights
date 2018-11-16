@@ -16,13 +16,11 @@ touchgfx::TextProvider::UnicodeConverterInitFunctionPointer touchgfx::TextProvid
 touchgfx::TextProvider::UnicodeConverterFunctionPointer touchgfx::TextProvider::unicodeConverterFunction = static_cast<touchgfx::TextProvider::UnicodeConverterFunctionPointer>(0);
 
 extern const touchgfx::Unicode::UnicodeChar* const textsEng[];
-extern const touchgfx::Unicode::UnicodeChar* const textsSpa[];
 
 TEXT_LOCATION_FLASH_PRAGMA
 const touchgfx::Unicode::UnicodeChar* const* const languagesArray[] TEXT_LOCATION_FLASH_ATTRIBUTE =
 {
-    textsEng,
-    textsSpa
+    textsEng
 };
 
 touchgfx::LanguageId touchgfx::Texts::currentLanguage = static_cast<touchgfx::LanguageId>(0);

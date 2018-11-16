@@ -3,35 +3,31 @@
 /*********************************************************************************/
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include "BitmapDatabase.hpp"
 #include <texts/TextKeysAndLanguages.hpp>
+#include "BitmapDatabase.hpp"
 
 Screen1ViewBase::Screen1ViewBase()  
 {
     box1.setPosition(0, 0, 480, 272);
-    box1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    box1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
 
-    bg_image.setXY(0, 0);
-    bg_image.setBitmap(Bitmap(BITMAP_BACKGROUND_ID));
-
-    powerLabel.setPosition(192, 196, 100, 25);
+    powerLabel.setPosition(315, 245, 150, 25);
     powerLabel.setColor(touchgfx::Color::getColorFrom24BitRGB(250, 230, 0));
     powerLabel.setLinespacing(0);
     powerLabel.setTypedText(TypedText(T_SINGLEUSEID1));
-    Unicode::snprintf(powerLabelBuffer, POWERLABEL_SIZE, "%s", TypedText(T_SINGLEUSEID2).getText());
+    powerLabelBuffer[0] = 0;
     powerLabel.setWildcard(powerLabelBuffer);
 
-    scalableImage1.setBitmap(Bitmap(BITMAP_COLOR_WHEEL_ID));
-    scalableImage1.setPosition(167, 46, 150, 150);
-    scalableImage1.setScalingAlgorithm(ScalableImage::NEAREST_NEIGHBOR);
+    color_box.setBitmap(Bitmap(BITMAP_COLOR_WHEEL_ID));
+    color_box.setPosition(0, 1, 270, 270);
+    color_box.setScalingAlgorithm(ScalableImage::NEAREST_NEIGHBOR);
 
-    color_button.setPosition(167, 46, 150, 150);
-    color_button.setBitmaps(Bitmap(BITMAP_COLOR_BUTTON_ID), Bitmap(BITMAP_COLOR_BUTTON_ID));
-    color_button.setAlpha(88);
+    selector.setBitmap(Bitmap(BITMAP_CIRCLE_OUTLINE_ID));
+    selector.setPosition(130, 131, 10, 10);
+    selector.setScalingAlgorithm(ScalableImage::NEAREST_NEIGHBOR);
 
     add(box1);
-    add(bg_image);
     add(powerLabel);
-    add(scalableImage1);
-    add(color_button);
+    add(color_box);
+    add(selector);
 }

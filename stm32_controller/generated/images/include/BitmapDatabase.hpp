@@ -7,20 +7,7 @@
 #include <touchgfx/Bitmap.hpp>
 
 const uint16_t BITMAP_COLOR_WHEEL_ID = 0; // Size: 730x730 pixels
-const uint16_t BITMAP_BACKGROUND_ID = 1; // Size: 480x272 pixels
-const uint16_t BITMAP_BLUE_SLIDER_HORIZONTAL_INDICATORS_SLIDER_SQUARE_KNOB_ID = 2; // Size: 16x35 pixels
-const uint16_t BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_SQUARE_BACK_ID = 3; // Size: 468x12 pixels
-const uint16_t BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_SQUARE_FILL_ID = 4; // Size: 468x12 pixels
-const uint16_t BITMAP_BOARD_ID = 5; // Size: 173x220 pixels
-const uint16_t BITMAP_BULB_OFF_ID = 6; // Size: 165x175 pixels
-const uint16_t BITMAP_BULB_ON_ID = 7; // Size: 165x175 pixels
-const uint16_t BITMAP_COLOR_BUTTON_ID = 8; // Size: 150x150 pixels
-const uint16_t BITMAP_MEXICAN_FLAG_40X23_ID = 9; // Size: 40x23 pixels
-const uint16_t BITMAP_MEXICAN_FLAG_INVERT_40X23_ID = 10; // Size: 40x23 pixels
-const uint16_t BITMAP_POWER_ID = 11; // Size: 65x69 pixels
-const uint16_t BITMAP_POWER_PRESSED_ID = 12; // Size: 65x69 pixels
-const uint16_t BITMAP_USA_FLAG_40X23_ID = 13; // Size: 43x23 pixels
-const uint16_t BITMAP_USA_FLAG_INVERT_40X23_ID = 14; // Size: 43x23 pixels
+const uint16_t BITMAP_CIRCLE_OUTLINE_ID = 1; // Size: 981x980 pixels
 
 namespace BitmapDatabase
 {
