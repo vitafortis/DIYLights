@@ -6,8 +6,12 @@
 #include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Bitmap.hpp>
 
-const uint16_t BITMAP_COLOR_WHEEL_ID = 0; // Size: 730x730 pixels
+const uint16_t BITMAP_BACKGROUND_ID = 0; // Size: 480x272 pixels
 const uint16_t BITMAP_CIRCLE_OUTLINE_ID = 1; // Size: 981x980 pixels
+const uint16_t BITMAP_COLORWHEEL_ID = 2; // Size: 270x270 pixels
+const uint16_t BITMAP_SLIDER_BACKGROUND_VERTICAL_ID = 3; // Size: 6x166 pixels
+const uint16_t BITMAP_SLIDER_BACKGROUND_VERTICAL_FILLED_ID = 4; // Size: 6x166 pixels
+const uint16_t BITMAP_SLIDER_KNOB_CIRCLE_ID = 5; // Size: 35x35 pixels
 
 namespace BitmapDatabase
 {

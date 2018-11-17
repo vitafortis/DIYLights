@@ -1095,13 +1095,25 @@
       <group>
         <name>images</name>
         <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\background.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\BitmapDatabase.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\circle-outline.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Color_wheel.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\images\src\colorwheel.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\slider_background_vertical.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\slider_background_vertical_filled.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\slider_knob_circle.cpp</name>
         </file>
       </group>
       <group>

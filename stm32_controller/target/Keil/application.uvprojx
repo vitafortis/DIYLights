@@ -872,6 +872,11 @@
               <FilePath>../../generated/fonts/src/applicationfontprovider.cpp</FilePath>
             </File>
             <File>
+              <FileName>background.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../../generated/images/src/background.cpp</FilePath>
+            </File>
+            <File>
               <FileName>BitmapDatabase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../../generated/images/src/bitmapdatabase.cpp</FilePath>
@@ -882,9 +887,9 @@
               <FilePath>../../generated/images/src/circle-outline.cpp</FilePath>
             </File>
             <File>
-              <FileName>Color_wheel.cpp</FileName>
+              <FileName>colorwheel.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../../generated/images/src/color_wheel.cpp</FilePath>
+              <FilePath>../../generated/images/src/colorwheel.cpp</FilePath>
             </File>
             <File>
               <FileName>Font_verdana_10_4bpp.cpp</FileName>
@@ -935,6 +940,21 @@
               <FileName>Screen1ViewBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../../generated/gui_generated/src/screen1_screen/screen1viewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>slider_background_vertical.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../../generated/images/src/slider_background_vertical.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>slider_background_vertical_filled.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../../generated/images/src/slider_background_vertical_filled.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>slider_knob_circle.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../../generated/images/src/slider_knob_circle.cpp</FilePath>
             </File>
             <File>
               <FileName>Table_verdana_10_4bpp.cpp</FileName>

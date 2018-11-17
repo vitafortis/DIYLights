@@ -15,6 +15,8 @@ public:
     virtual void tearDownScreen();
 
     void colorHandler(const ScalableImage& b, const ClickEvent& e);
+    int *convertHSBtoRGB(float H, float S, float B);
+    
 
 protected:
   const int RADIUS = 135;

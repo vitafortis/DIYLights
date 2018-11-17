@@ -68,12 +68,12 @@ build/MINGW32_NT-6.2/simulator/main.o: simulator/main.cpp \
  generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp \
  gui/include/gui/screen1_screen/Screen1Presenter.hpp \
  gui/include/gui/model/ModelListener.hpp \
- touchgfx//framework/include/touchgfx/widgets/Box.hpp \
+ touchgfx//framework/include/touchgfx/widgets/Image.hpp \
  touchgfx//framework/include/touchgfx/widgets/Widget.hpp \
  touchgfx//framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  touchgfx//framework/include/touchgfx/widgets/TextArea.hpp \
  touchgfx//framework/include/touchgfx/widgets/ScalableImage.hpp \
- touchgfx//framework/include/touchgfx/widgets/Image.hpp \
+ touchgfx//framework/include/touchgfx/containers/Slider.hpp \
  touchgfx//framework/include/touchgfx/mixins/ClickListener.hpp \
  generated/images/include/BitmapDatabase.hpp \
  generated/gui_generated/include/gui_generated/common/SimConstants.hpp \
@@ -219,7 +219,7 @@ gui/include/gui/screen1_screen/Screen1Presenter.hpp:
 
 gui/include/gui/model/ModelListener.hpp:
 
-touchgfx//framework/include/touchgfx/widgets/Box.hpp:
+touchgfx//framework/include/touchgfx/widgets/Image.hpp:
 
 touchgfx//framework/include/touchgfx/widgets/Widget.hpp:
 
@@ -229,7 +229,7 @@ touchgfx//framework/include/touchgfx/widgets/TextArea.hpp:
 
 touchgfx//framework/include/touchgfx/widgets/ScalableImage.hpp:
 
-touchgfx//framework/include/touchgfx/widgets/Image.hpp:
+touchgfx//framework/include/touchgfx/containers/Slider.hpp:
 
 touchgfx//framework/include/touchgfx/mixins/ClickListener.hpp:
 

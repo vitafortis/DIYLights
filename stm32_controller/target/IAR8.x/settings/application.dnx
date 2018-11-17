@@ -103,11 +103,6 @@
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
     </TermIOLog>
-    <LogFile>
-        <LoggingEnabled>_ 0</LoggingEnabled>
-        <LogFile>_ ""</LogFile>
-        <Category>_ 0</Category>
-    </LogFile>
     <DriverProfiling>
         <Enabled>0</Enabled>
         <Mode>3</Mode>
@@ -121,6 +116,11 @@
     <CallStackStripe>
         <ShowTiming>1</ShowTiming>
     </CallStackStripe>
+    <LogFile>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </LogFile>
     <DisassembleMode>
         <mode>0</mode>
     </DisassembleMode>

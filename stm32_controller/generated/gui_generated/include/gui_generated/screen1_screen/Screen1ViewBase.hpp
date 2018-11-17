@@ -7,9 +7,10 @@
 #include <gui/common/FrontendApplication.hpp>
 #include <mvp/View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
-#include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
+#include <touchgfx/containers/Slider.hpp>
 #include <touchgfx/mixins/ClickListener.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
@@ -26,10 +27,11 @@ protected:
     /*
      * Member Declarations
      */
-    touchgfx::Box box1;
+    touchgfx::Image image1;
     touchgfx::TextAreaWithOneWildcard powerLabel;
     touchgfx::ClickListener< touchgfx::ScalableImage > color_box;
     touchgfx::ScalableImage selector;
+    touchgfx::Slider slider1;
 
     /*
      * Wildcard Buffers
