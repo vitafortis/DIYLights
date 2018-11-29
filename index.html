@@ -1,0 +1,33 @@
+<html>
+<head>
+	<link rel="stylesheet" href="styles.css">
+	<title>Light Controller</title>
+</head>
+<body>
+	<div class="container">  
+	
+		<form id="controller" method="get" action="http://192.168.43.75/leds">
+			<h3>Light Controller</h3>
+			<fieldset>
+				Zone (0-3): <input type="number" name="z" min="0" max="3" value="0" required autofocus>
+			</fieldset>
+			<fieldset>
+				R: 		<input type="number" name="R" min="0" max="255" value="0" required >
+			</fieldset>
+			<fieldset>
+				G: 		<input type="number" name="G" min="0" max="255" value="0" required >
+			</fieldset>
+			<fieldset>
+				B: 		<input type="number" name="B" min="0" max="255" value="0" required >
+			</fieldset>
+			<fieldset>
+				Time to fade ( in 1/2 seconds ):		<input type="number" name="t" min="0" max="255" value="0" required >
+			</fieldset>
+			<fieldset>
+				<button id="controller-submit" name="submit" type="submit" data-submit="...Sending">Submit</button>
+			</fieldset>
+		</form>
+	</div>
+
+</body>
+</html>
