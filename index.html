@@ -6,8 +6,13 @@
 <body>
 	<div class="container">  
 	
-		<form id="controller" method="get" action="http://192.168.43.75/leds">
+		<form id="controller" method="get" action="http://localhost/leds">
 			<h3>Light Controller</h3>
+			<fieldset>
+				  <input type="radio" name="side" value="left" checked>Left
+				  <input type="radio" name="side" value="right">Right
+				  <input type="radio" name="side" value="both">Both  
+			</fieldset>
 			<fieldset>
 				Zone (0-3): <input type="number" name="z" min="0" max="3" value="0" required autofocus>
 			</fieldset>
