@@ -28,7 +28,7 @@ struct Light strips[numOfStrips];
 
 void setup() {
 	Serial.begin(115200);
-  for ( int i = 0; i < numOfStrips; i+=3) {
+  for ( int i = 0; i < numOfStrips*3; i+=3) {
     pinMode(pins[i], OUTPUT);
     pinMode(pins[i+1], OUTPUT);
     pinMode(pins[i+2], OUTPUT);
@@ -97,9 +97,9 @@ void readValues() {
 		colVals[2] = map(b,0, 255, 0, 1023);
 		if ( zone == 1) {
 			setLights(0, colVals, ticks);
-		} else if ( zone == 10) {
+		} else if ( zone == 2) {
 			setLights(1, colVals, ticks);
-		} else if ( zone == 11 ) {
+		} else if ( zone == 3 ) {
 			setLights(0, colVals, ticks);
 			setLights(1, colVals, ticks);
 		}
