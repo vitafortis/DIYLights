@@ -28,13 +28,13 @@ struct Light strips[numOfStrips];
 
 void setup() {
 	Serial.begin(115200);
-  for ( int i = 0; i < numOfStrips*3; i+=3) {
-    pinMode(pins[i], OUTPUT);
-    pinMode(pins[i+1], OUTPUT);
-    pinMode(pins[i+2], OUTPUT);
-    strips[i].pins[0] = pins[i];
-    strips[i].pins[1] = pins[i+1];
-    strips[i].pins[2] = pins[i+2];
+  for( int i = 0; i < numOfStrips; i++){
+    pinMode(pins[i*3], OUTPUT);
+    pinMode(pins[i*3+1], OUTPUT);
+    pinMode(pins[i*3+2], OUTPUT);
+    strips[i].pins[0] = pins[i*3];
+    strips[i].pins[1] = pins[i*3+1];
+    strips[i].pins[2] = pins[i*3+2];
 	}
 	WiFi.begin("TRENDnet711", "gV3Rji8XfE"); //Connect to the WiFi network
 	while (WiFi.status() != WL_CONNECTED) { //Wait for connection
