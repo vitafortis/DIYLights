@@ -6,7 +6,7 @@
 <body>
 	<div class="container">  
 	
-		<form id="controller" method="get" action="http://localhost/leds">
+		<form id="controller" method="get" action="http://192.168.1.152:43021/leds">
 			<h3>Light Controller</h3>
 			<fieldset>
 				  <input type="radio" name="side" value="left" checked>Left
@@ -30,6 +30,17 @@
 			</fieldset>
 			<fieldset>
 				<button id="controller-submit" name="submit" type="submit" data-submit="...Sending">Submit</button>
+			</fieldset>
+		</form>
+	</div>
+	<div class="container">
+		<form id="controller" method="get" action="http://192.168.1.152:43021/rightSide">
+			<h3> Right Side patterns</h3>
+			<fieldset>
+				<button id="rightSideButton1" name="pattern" value="greenRed" type="submit">Green Red</button>
+			</fieldset>
+			<fieldset>
+				<button id="rightSideButton2" name="pattern" value="redGreen" type="submit">Red Green</button>
 			</fieldset>
 		</form>
 	</div>
