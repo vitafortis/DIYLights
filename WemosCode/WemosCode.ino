@@ -36,6 +36,7 @@ void setup() {
     strips[i].pins[1] = pins[i*3+1];
     strips[i].pins[2] = pins[i*3+2];
 	}
+ WiFi.mode(WIFI_STA);
 	WiFi.begin("TRENDnet711", "gV3Rji8XfE"); //Connect to the WiFi network
 	while (WiFi.status() != WL_CONNECTED) { //Wait for connection
 		delay(500);
