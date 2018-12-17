@@ -1,1 +1,3 @@
-# ChristmasLights
+# DIYLights
+
+This project is a work in progress.
