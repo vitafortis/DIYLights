@@ -26,8 +26,8 @@ class S(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        leftIP = "http://192.168.1.164"
-        rightIP = "http://192.168.1.1"
+        leftIP = "http://192.168.10.10"
+        rightIP = "http://192.168.10.11"
 
         if  "/leds" in self.path:
             print("Connection received")
@@ -62,6 +62,15 @@ class S(BaseHTTPRequestHandler):
             self.wfile.write(retStr.encode('utf-8'))
 
         if "/rightSide" in self.path:
+            args = parse_qs(urlparse(self.path).query)
+            pattern = args["pattern"][0]
+            if pattern == "greenRed":
+                requests.get(rightIP + "/leds?z=2&G=255&R=0&B=0&t=0")
+                requests.get(rightIP + "/leds?z=1&R=255&G=0&B=0&t=0")
+            if pattern == "redGreen":
+                requests.get(rightIP + "/leds?z=1&G=255&R=0&B=0&t=0")
+                requests.get(rightIP + "/leds?z=2&R=255&G=0&B=0&t=0")
+        if "/leftSide" in self.path:
             args = parse_qs(urlparse(self.path).query)
             pattern = args["pattern"][0]
             if pattern == "greenRed":

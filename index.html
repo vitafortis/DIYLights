@@ -4,9 +4,35 @@
 	<title>Light Controller</title>
 </head>
 <body>
+	<div class="container" style="float:left;margin-left:7%">
+		<form id="controller" method="get" action="http://192.168.10.20:43021/leftSide" target="command">
+			<h3> Left Side patterns</h3>
+			<fieldset>
+				<button id="leftSideButton1" name="pattern" value="greenRed" type="submit">Green Red</button>
+			</fieldset>
+			<fieldset>
+				<button id="leftSideButton2" name="pattern" value="redGreen" type="submit">Red Green</button>
+			</fieldset>
+			<fieldset>
+				<button id="leftSideButton3" name="pattern" value="fadeRed" type="submit">Fade Red</button>
+			</fieldset>
+			
+		</form>
+	</div>
+	<div class="container" style="float:right;margin-right:7%;">
+		<form id="controller" method="get" action="http://192.168.10.20:43021/rightSide" target="command">
+			<h3> Right Side patterns</h3>
+			<fieldset>
+				<button id="rightSideButton1" name="pattern" value="greenRed" type="submit">Green Red</button>
+			</fieldset>
+			<fieldset>
+				<button id="rightSideButton2" name="pattern" value="redGreen" type="submit">Red Green</button>
+			</fieldset>
+		</form>
+	</div>
 	<div class="container">  
 	
-		<form id="controller" method="get" action="http://192.168.1.152:43021/leds">
+		<form id="controller" method="get" action="http://192.168.10.20:43021/leds" target="command">
 			<h3>Light Controller</h3>
 			<fieldset>
 				  <input type="radio" name="side" value="left" checked>Left
@@ -33,17 +59,6 @@
 			</fieldset>
 		</form>
 	</div>
-	<div class="container">
-		<form id="controller" method="get" action="http://192.168.1.152:43021/rightSide">
-			<h3> Right Side patterns</h3>
-			<fieldset>
-				<button id="rightSideButton1" name="pattern" value="greenRed" type="submit">Green Red</button>
-			</fieldset>
-			<fieldset>
-				<button id="rightSideButton2" name="pattern" value="redGreen" type="submit">Red Green</button>
-			</fieldset>
-		</form>
-	</div>
-
+	<iframe name="command" style="display:none"></iframe>
 </body>
 </html>
