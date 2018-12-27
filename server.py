@@ -33,9 +33,10 @@ class S(BaseHTTPRequestHandler):
             print("Connection received")
             args = parse_qs(urlparse(self.path).query)
             side = args["side"][0]
-            r = args["R"][0]
-            g = args["G"][0]
-            b = args["B"][0]
+            picker = args["picker"][0]
+            r = int(picker[1:3], 16)
+            g = int(picker[3:5], 16)
+            b = int(picker[5:7], 16)
             t = args["t"][0]
             zone = args["z"][0]
             self._set_headers()
@@ -47,39 +48,46 @@ class S(BaseHTTPRequestHandler):
             ret["B"] = b
             ret["Fadetime"] = t
 
-            if side == "left":
-                requests.get(leftIP + self.path)
-            elif side == "right":
-                requests.get(rightIP + self.path)
-            elif side == "both":
-                requests.get(leftIP + self.path)
-                requests.get(rightIP + self.path)
+            r = ""
+            try:
+                if side == "left":
+                    r = requests.get(leftIP + self.path)
+                elif side == "right":
+                    r = requests.get(rightIP + self.path)
+                elif side == "both":
+                    r = []
+                    r.append(requests.get(leftIP + self.path))
+                    r.append(requests.get(rightIP + self.path))
+            except ConnectionError:
+                print("Error connecting")
 
-
+            print(type(r))
+            print(r)
             lst = []
             lst.append(ret)
             retStr = json.dumps(lst)
             self.wfile.write(retStr.encode('utf-8'))
 
-        if "/rightSide" in self.path:
+        # Used for setting patterns
+        if "pattern" in self.path:
+            ip = ""
+            if "leftSide" in self.path:
+                ip = leftIP
+            else:
+                ip = rightIP
             args = parse_qs(urlparse(self.path).query)
             pattern = args["pattern"][0]
-            if pattern == "greenRed":
-                requests.get(rightIP + "/leds?z=2&G=255&R=0&B=0&t=0")
-                requests.get(rightIP + "/leds?z=1&R=255&G=0&B=0&t=0")
-            if pattern == "redGreen":
-                requests.get(rightIP + "/leds?z=1&G=255&R=0&B=0&t=0")
-                requests.get(rightIP + "/leds?z=2&R=255&G=0&B=0&t=0")
-        if "/leftSide" in self.path:
-            args = parse_qs(urlparse(self.path).query)
-            pattern = args["pattern"][0]
-            if pattern == "greenRed":
-                requests.get(leftIP + "/leds?z=2&G=255&R=0&B=0&t=0")
-                requests.get(leftIP + "/leds?z=1&R=255&G=0&B=0&t=0")
-            if pattern == "redGreen":
-                requests.get(leftIP + "/leds?z=1&G=255&R=0&B=0&t=0")
-                requests.get(leftIP + "/leds?z=2&R=255&G=0&B=0&t=0")
-        
+            r = []
+            try:
+                if pattern == "greenRed":
+                    r.append(requests.get(ip + "/leds?z=2&G=255&R=0&B=0&t=0"))
+                    r.append(requests.get(ip + "/leds?z=1&R=255&G=0&B=0&t=0"))
+                if pattern == "redGreen":
+                    r.append(requests.get(ip + "/leds?z=1&G=255&R=0&B=0&t=0"))
+                    r.append(requests.get(ip + "/leds?z=2&R=255&G=0&B=0&t=0"))
+            except ConnectionError:
+                print("Error connecting ")
+            print(r)
 
     def do_HEAD(self):
         self._set_headers()
