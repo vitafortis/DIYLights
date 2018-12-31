@@ -40,33 +40,31 @@ class S(BaseHTTPRequestHandler):
             t = args["t"][0]
             zone = args["z"][0]
             self._set_headers()
-            ret = {}
-            ret["Side"] = side
-            ret["Zone"] = t
-            ret["R"] = r
-            ret["G"] = g
-            ret["B"] = b
-            ret["Fadetime"] = t
+            params = {}
+            params["side"] = side
+            params["z"] = zone
+            params["R"] = r
+            params["G"] = g
+            params["B"] = b
+            params["t"] = t
 
             r = ""
             try:
                 if side == "left":
-                    r = requests.get(leftIP + self.path)
+                    r = requests.get(leftIP + "/leds", params=params)
                 elif side == "right":
-                    r = requests.get(rightIP + self.path)
+                    r = requests.get(rightIP + "/leds", params=params)
                 elif side == "both":
                     r = []
-                    r.append(requests.get(leftIP + self.path))
-                    r.append(requests.get(rightIP + self.path))
-            except ConnectionError:
+                    r.append(requests.get(leftIP + "/leds", params=params))
+                    r.append(requests.get(rightIP + "/leds", params=params))
+            except requests.ConnectionError:
                 print("Error connecting")
 
-            print(type(r))
-            print(r)
             lst = []
-            lst.append(ret)
-            retStr = json.dumps(lst)
-            self.wfile.write(retStr.encode('utf-8'))
+            lst.append(params)
+            paramsStr = json.dumps(lst)
+            self.wfile.write(paramsStr.encode('utf-8'))
 
         # Used for setting patterns
         if "pattern" in self.path:
@@ -85,7 +83,7 @@ class S(BaseHTTPRequestHandler):
                 if pattern == "redGreen":
                     r.append(requests.get(ip + "/leds?z=1&G=255&R=0&B=0&t=0"))
                     r.append(requests.get(ip + "/leds?z=2&R=255&G=0&B=0&t=0"))
-            except ConnectionError:
+            except requests.ConnectionError:
                 print("Error connecting ")
             print(r)
 
@@ -96,6 +94,13 @@ class S(BaseHTTPRequestHandler):
         # Doesn't do anything with posted data
         self._set_headers()
         self.wfile.write("<html><body><h1>POST!</h1></body></html>")
+
+    def processStatus(self, r):
+        if r is requests.models.Response:
+         
+        elif r is list:
+            for i  in r:
+
         
 def run(server_class=HTTPServer, handler_class=S, port=80):
     server_address = ('', port)

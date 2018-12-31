@@ -146,3 +146,17 @@ fieldset {
 :-ms-input-placeholder {
   color: #888;
 }
+
+.canvas-container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+canvas { 
+  background:url(labLayout.png);
+  background-size: 100% 100%;
+  display: inline;
+  height: 940px;
+  width: 834px;
+}
