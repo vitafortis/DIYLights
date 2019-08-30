@@ -14,8 +14,16 @@ Send a POST request::
 """
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
+import datetime
 import json
 import requests
+import sched
+import time
+
+leftIP = "http://192.168.10.10"
+rightIP = "http://192.168.10.11"
+leftState = ""
+rightState = ""
 
 class S(BaseHTTPRequestHandler):
 
@@ -26,8 +34,7 @@ class S(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        leftIP = "http://192.168.10.10"
-        rightIP = "http://192.168.10.11"
+
 
         if  "/leds" in self.path:
             print("Connection received")
@@ -52,12 +59,19 @@ class S(BaseHTTPRequestHandler):
             try:
                 if side == "left":
                     r = requests.get(leftIP + "/leds", params=params)
+                    if r.status_code == 200:
+                        leftState = params
                 elif side == "right":
                     r = requests.get(rightIP + "/leds", params=params)
+                    if r.status_code == 200:
+                        rightState = params
                 elif side == "both":
                     r = []
                     r.append(requests.get(leftIP + "/leds", params=params))
                     r.append(requests.get(rightIP + "/leds", params=params))
+                    if r[0].status_code == 200 and r[1].status_code == 200:
+                        leftState = params
+                        rightState = params
             except requests.ConnectionError:
                 print("Error connecting")
 
@@ -100,13 +114,31 @@ class S(BaseHTTPRequestHandler):
          
         elif r is list:
             for i  in r:
+                t = 1
 
-        
+
+def lightTimer():
+    off = False
+    on = True
+    if off:
+        requests.get(leftIP + "/leds?z=3&R=0&G=0&B=0&t=0")
+        requests.get(rightIP + "/leds?z=3&R=0&G=0&B=0&t=0")
+    elif on:
+            requests.get(leftIP + "/leds", params=leftState)
+            requests.get(rightIP + "/leds", params=rightState)     
+
 def run(server_class=HTTPServer, handler_class=S, port=80):
+    thread = threading.Thread(target=timer, args=())
+    thread.daemon = True
+    thread.start()
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     print('Starting httpd...')
     httpd.serve_forever()
+    sch = sched.scheduler(time.time, time.sleep)
+    
+
+    
 
 if __name__ == "__main__":
     from sys import argv
